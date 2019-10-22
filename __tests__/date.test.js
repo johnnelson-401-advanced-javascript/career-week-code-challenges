@@ -2,9 +2,9 @@ const addDate = require('../date-adder');
 
 
 describe('addDate function', () => {
-
+//date object gets modified by addDate and mutates original.
   let date = new Date('2019-10-22');
-  
+
   it('increments seconds', () => {
     let diff = '10s';
     let newDate = addDate(date, diff);
