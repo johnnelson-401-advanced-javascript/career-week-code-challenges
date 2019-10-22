@@ -11,7 +11,7 @@ describe('addDate function', () => {
   it('increments Minutes', () => {
     let diff = '10m';
     let newDate = addDate(date, diff);
-    expect(newDate.getMinutes()).toEqual(date.getMinutes() + 10);
+    expect(newDate.getMinutes()).toBe(date.getMinutes() + 10);
   });
 
   it('increments Hours', () => {
