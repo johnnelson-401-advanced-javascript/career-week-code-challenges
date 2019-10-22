@@ -1,7 +1,7 @@
 function addDate(date, diff) {
   // let date = new Date(input);
   let diffNum = parseInt(diff);
-  let operatorList = /[s,m,h,d,M,y]/g;
+  let operatorList = /[s,m,h,d,w,M,y]/g;
   let operator = diff.match(operatorList);
 
   if(operator.includes('s')) {
@@ -20,12 +20,16 @@ function addDate(date, diff) {
     let result = new Date(date.setDate(date.getDate() + diffNum));
     return result;
   }
+  if(operator.includes('w')) {
+    let result = new Date(date.setDate(date.getDate() + (diffNum * 7)));
+    return result;
+  }
   if(operator.includes('M')) {
     let result = new Date(date.setMonth(date.getMonth() + diffNum));
     return result;
   }
   if(operator.includes('y')) {
-    let result = new Date(date.setYear(date.getYear() + diffNum));
+    let result = new Date(date.getDate(date.getDate() + (diffNum * 365)));
     return result;
   }
   else return Error;
