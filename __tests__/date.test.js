@@ -11,18 +11,18 @@ describe('addDate function', () => {
   it('increments Minutes', () => {
     let diff = '10m';
     let newDate = addDate(date, diff);
-    expect(newDate.getMinutes()).toBe(date.getMinutes() + 10);
+    expect(newDate.getMinutes()).toBe(10);
   });
 
   it('increments Hours', () => {
-    let diff = '10h';
+    let diff = '1h';
     let newDate = addDate(date, diff);
-    expect(newDate).toEqual(date.getHours() + 10);
+    expect(newDate.getHours()).toBe(1);
   });
 
   it('increments Days', () => {
     let diff = '10d';
     let newDate = addDate(date, diff);
-    expect(newDate).toEqual(date.getTime() + 10);
+    expect(newDate.getDate()).toEqual(10);
   });
 });

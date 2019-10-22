@@ -29,5 +29,5 @@ module.exports = addDate;
 const now = new Date();
 console.log(now);
 
-const later = addDate(now, '1m');
+const later = addDate(now, '1h');
 console.log(later);
