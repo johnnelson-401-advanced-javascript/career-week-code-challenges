@@ -1,33 +1,39 @@
 function addDate(date, diff) {
   // let date = new Date(input);
   let diffNum = parseInt(diff);
-  let operatorList = /[a-z]/gi;
+  let operatorList = /[s,m,h,d,M,y]/g;
   let operator = diff.match(operatorList);
-  
+
   if(operator.includes('s')) {
-    return new Date(date.setSeconds(date.getSeconds() + diffNum));
+    let result = new Date(date.setSeconds(date.getSeconds() + diffNum));
+    return result;
   }
   if(operator.includes('m')) {
-    return new Date(date.setMinutes(date.getMinutes() + diffNum));
-  } 
+    let result = new Date(date.setMinutes(date.getMinutes() + diffNum));
+    return result;}
+
   if(operator.includes('h')) {
-    return new Date(date.setHours(date.getHours() + diffNum));
+    let result = new Date(date.setHours(date.getHours() + diffNum));
+    return result;
   }
   if(operator.includes('d')) {
-    return new Date(date.setDate(date.getDate() + diffNum));
+    let result = new Date(date.setDate(date.getDate() + diffNum));
+    return result;
   }
   if(operator.includes('M')) {
-    return new Date(date.setMonth(date.getMonth() + diffNum));
+    let result = new Date(date.setMonth(date.getMonth() + diffNum));
+    return result;
   }
   if(operator.includes('y')) {
-    return new Date(date.setYear(date.getYear() + diffNum));
+    let result = new Date(date.setYear(date.getYear() + diffNum));
+    return result;
   }
-  // else return Error;
+  else return Error;
 }
 module.exports = addDate;
 
-const now = new Date();
-console.log(now);
+// const now = new Date();
+// console.log(now);
 
-const later = addDate(now, '1h');
-console.log(later);
+// const later = addDate(now, '1h');
+// console.log(later);
