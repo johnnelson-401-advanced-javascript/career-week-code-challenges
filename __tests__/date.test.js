@@ -28,7 +28,9 @@ describe('addDate function', () => {
 
   it('increments Days', () => {
     let diff = '1d';
-    let newDate = addDate(date, diff);
-    expect(newDate.getDate()).toEqual(22);
+    console.log('starting date', date.getDate());
+    let result = addDate(date, diff);
+    console.log('result date', result.getDate());
+    expect(result.getDate()).toEqual(22);
   });
 });
