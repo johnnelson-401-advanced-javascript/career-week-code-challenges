@@ -1,17 +1,17 @@
 const addDate = require('../date-adder');
 describe('addDate function', () => {
   let date = new Date('2019-10-22');
-  it.only('increments seconds', () => {
+  it('increments seconds', () => {
     let diff = '10s';
     let newDate = addDate(date, diff);
-    console.log(date, 'new date is', newDate);
-    expect(newDate).toBe(10);
+    console.log(date, diff, 'new date is', newDate);
+    expect(newDate.getSeconds()).toBe(10);
   });
 
   it('increments Minutes', () => {
     let diff = '10m';
     let newDate = addDate(date, diff);
-    expect(newDate).toEqual(date.getMinutes() + 10);
+    expect(newDate.getMinutes()).toEqual(date.getMinutes() + 10);
   });
 
   it('increments Hours', () => {
@@ -25,6 +25,4 @@ describe('addDate function', () => {
     let newDate = addDate(date, diff);
     expect(newDate).toEqual(date.getTime() + 10);
   });
-  
-
 });
