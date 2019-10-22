@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest": "jest --runInBand --verbose",
+    "test": "npm run jest -- --coverage",
+    "test:watch": "npm run jest -- --watchAll"
   },
   "repository": {
     "type": "git",
