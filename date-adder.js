@@ -1,38 +1,38 @@
 function addDate(date, diff) {
-  // let date = new Date(input);
-  let diffNum = parseInt(diff);
-  let operatorList = /[s,m,h,d,w,M,y]/g;
-  let operator = diff.match(operatorList);
+  let regex = /[a-z]/i;
+  let diffNum = parseInt(diff.split(regex).join(''));
+  console.log(diffNum);
+  
+  let result = new Date(date);
 
-  if(operator.includes('s')) {
-    let result = new Date(date.setSeconds(date.getSeconds() + diffNum));
+  if(diff.includes('s')) {
+    result.setSeconds(result.getSeconds() + diffNum);
     return result;
   }
-  if(operator.includes('m')) {
-    let result = new Date(date.setMinutes(date.getMinutes() + diffNum));
+  if(diff.includes('m')) {
+    result.setMinutes(result.getMinutes() + diffNum);
     return result;}
 
-  if(operator.includes('h')) {
-    let result = new Date(date.setHours(date.getHours() + diffNum));
+  if(diff.includes('h')) {
+    result.setHours(result.getHours() + diffNum);
     return result;
   }
-  if(operator.includes('d')) {
-    let result = new Date(date.setDate(date.getDate() + diffNum));
+  if(diff.includes('d')) {
+    result.setDate(result.getDate() + diffNum);
     return result;
   }
-  if(operator.includes('w')) {
-    let result = new Date(date.setDate(date.getDate() + (diffNum * 7)));
+  if(diff.includes('w')) {
+    result.setDate(result.getDate() + (diffNum * 7));
     return result;
   }
-  if(operator.includes('M')) {
-    let result = new Date(date.setMonth(date.getMonth() + diffNum));
+  if(diff.includes('M')) {
+    result.setMonth(result.getMonth() + diffNum);
     return result;
   }
-  if(operator.includes('y')) {
-    let result = new Date(date.getDate(date.getDate() + (diffNum * 365)));
+  if(diff.includes('y')) {
+    result.setFullYear(result.getFullYear() + diffNum);
     return result;
   }
-  else return Error;
 }
 module.exports = addDate;
 
