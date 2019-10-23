@@ -1,6 +1,5 @@
 function addDate(date, diff) {
-  let regex = /[a-z]/i;
-  let diffNum = parseInt(diff.split(regex).join(''));
+  let diffNum = parseInt(diff.slice(0, -1));
   
   let result = new Date(date);
 
