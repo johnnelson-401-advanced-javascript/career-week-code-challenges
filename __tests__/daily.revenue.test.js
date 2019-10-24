@@ -4,7 +4,6 @@ let calcRevenue = require('../revenue');
 describe('Converts Revenue data into an object date:sales', () => {
   it('Converts to proper format', () => {
     let results = calcRevenue(transactions);
-    console.log(results);
     expect(results).toEqual(
       { 
         'Thu Jul 18 2019': 25,
